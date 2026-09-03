@@ -6,8 +6,8 @@ class SerialNumberBarcodePlugin(BarcodeMixin, InvenTreePlugin):
 
     NAME = "Serial# Barcodes"
     TITLE = "Serial Number Barcodes"
-    DESCRIPTION = "Scan barcodes which use StockItem Serial# as data. Requires globally unique serial numbers"
-    VERSION = "1.0.0"
+    DESCRIPTION = "Scan barcodes which use StockItem Serial# as data. Requires unique serial numbers"
+    VERSION = "1.0.1"
     AUTHOR = "Matej Zachar"
 
     def scan(self, barcode_data):
@@ -16,5 +16,5 @@ class SerialNumberBarcodePlugin(BarcodeMixin, InvenTreePlugin):
             label = StockItem.barcode_model_type()
 
             return {label: instance.format_matched_response()}
-        except StockItem.DoesNotExist:
+        except (StockItem.DoesNotExist, StockItem.MultipleObjectsReturned):
             pass

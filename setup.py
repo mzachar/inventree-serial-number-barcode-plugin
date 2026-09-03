@@ -2,11 +2,11 @@ from setuptools import setup, find_packages
 
 setup(
     name = "inventree-serial-number-barcode-plugin",
-    version = "1.0.0",
+    version = "1.0.1",
     author = "Matej Zachar",
     author_email = "mzachar@users.noreply.github.com",
     license = "MIT",
-    description = "Scan barcodes which use StockItem Serial# as data. Requires globally unique serial numbers",
+    description = "Scan barcodes which use StockItem Serial# as data. Requires unique serial numbers",
     keywords = "inventree serial number barcode plugin",
     url = "https://github.com/mzachar/inventree-serial-number-barcode-plugin",
 
